@@ -1,0 +1,145 @@
+body {
+    background-color: #F1F1F1;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+body.dark-mode .navbar {
+    background-color: #222;
+    color: gray;
+}
+body.dark-mode .navbar .item1:hover {
+    color: #fefefe;
+}
+body.dark-mode .navbar .item2 a {
+    color: gray;
+}
+body.dark-mode .navbar .item2 a:hover {
+    color: #fefefe;
+}
+body.dark-mode .opinion-cards div {
+    background-color: #222;
+    color: white;
+}
+body.dark-mode .opinion-cards div img {
+    outline: 1px solid white;
+}
+.navbar {
+    background-color: #FEFEFE;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.2rem;
+    box-shadow: 0px 10px 20px #ababab29;
+}
+.navbar .item1 {
+    justify-self: start;
+    margin: .4em;
+    font-size: large;
+    cursor: pointer;
+}
+.navbar .item1:hover {
+    color: gray;
+}
+.navbar .item2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-self: end;
+    align-items: center;
+    grid-column-gap: 2rem;
+}
+.navbar .item2 a {
+    justify-self: center;
+    color: #222;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.navbar .item2 a:hover {
+    color: gray;
+}
+/* The switch - the box around the slider */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+}
+   /* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+   /* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    width: 3.5rem;
+    height: 1.55rem;
+    top: 5px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    transition: .4s;
+    border-radius: 30px;
+    outline: 2px solid gray;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.1em;
+    width: 1.3em;
+    border-radius: 20px;
+    top: 0.18em;
+    left: 0.3em;
+    background-color: black;
+    box-shadow: inset 8px -3px 2px 0px white;
+    transition: .4s;
+}
+input:checked + .slider {
+    background-color: rgb(166, 213, 255);
+}
+input:checked + .slider:before {
+    transform: translateX(1.3em);
+    background-color: #ffef00;
+    box-shadow: none;
+}
+.opinion {
+    margin-top: 6rem;
+    text-align: center;
+}
+.opinion .header {
+    font-size: 2.8rem;
+}
+.opinion-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 2rem;
+    justify-items: center;
+}
+.opinion-cards div {
+    background-color: #FEFEFE;
+    max-width: 26rem;
+    border-radius: 3%;
+    box-shadow: 10px 10px 20px #ababab29;
+}
+.opinion-cards div img {
+    max-width: 30%;
+    border-radius: 50%;
+    margin: 3%;
+}
+.opinion-cards div h1 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    margin: 0;
+}
+.opinion-cards div p {
+    font-size: 1rem;
+    padding: .7rem;
+    margin: 0;
+}
