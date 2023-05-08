@@ -3,22 +3,31 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
+/* ------ Dark Mode ------ */
 body.dark-mode {
     background-color: black;
     color: white;
 }
-body.dark-mode .navbar {
+body.dark-mode .header-nav {
     background-color: #222;
+}
+body.dark-mode .header-nav .logo {
     color: gray;
 }
-body.dark-mode .navbar .item1:hover {
+body.dark-mode .header-nav .logo:hover {
     color: #fefefe;
+    transition: .1s ease-in-out;
 }
-body.dark-mode .navbar .item2 a {
+body.dark-mode .header-nav .links a {
     color: gray;
 }
-body.dark-mode .navbar .item2 a:hover {
+body.dark-mode .header-nav .links a:hover {
     color: #fefefe;
+    transition: .1s ease-in-out;
 }
 body.dark-mode .opinion-cards div {
     background-color: #222;
@@ -27,37 +36,51 @@ body.dark-mode .opinion-cards div {
 body.dark-mode .opinion-cards div img {
     outline: 1px solid white;
 }
-.navbar {
+/* ------ White Mode ------ */
+.header-nav {
+    padding-top: 7px;
+    padding-bottom: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
     background-color: #FEFEFE;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 1.2rem;
     box-shadow: 0px 10px 20px #ababab29;
 }
-.navbar .item1 {
-    justify-self: start;
-    margin: .4em;
-    font-size: large;
+.header-nav .logo {
     cursor: pointer;
+    padding: 17px 54px 17px 12px;
+    font-size: larger;
+    font-weight: bold;
+    width: 20%;
+    margin-right: 1rem;
+    margin-left: 4rem;
 }
-.navbar .item1:hover {
-    color: gray;
+.header-nav .logo:hover {
+    color: #7d7d7d;
+    transition: .1s ease-in-out;
 }
-.navbar .item2 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    justify-self: end;
+.header-nav .navbar {
+    width: 100%;
+    display: flex;
     align-items: center;
-    grid-column-gap: 2rem;
+    justify-content: end;
+    margin-right: 4rem;
 }
-.navbar .item2 a {
-    justify-self: center;
+.header-nav .navbar .links {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    gap: 4rem;
+}
+.header-nav .navbar .links a {
     color: #222;
     text-decoration: none;
     font-weight: bolder;
 }
-.navbar .item2 a:hover {
-    color: gray;
+.header-nav .navbar .links a:hover {
+    color: #7d7d7d;
+    transition: .1s ease-in-out;
 }
 /* The switch - the box around the slider */
 .switch {
@@ -66,6 +89,7 @@ body.dark-mode .opinion-cards div img {
     display: inline-block;
     width: 3.5em;
     height: 2em;
+    margin-left: 4rem;
 }
    /* Hide default HTML checkbox */
 .switch input {
@@ -109,7 +133,7 @@ input:checked + .slider:before {
     box-shadow: none;
 }
 .opinion {
-    margin-top: 6rem;
+    margin-top: 5rem;
     text-align: center;
 }
 .opinion .header {
