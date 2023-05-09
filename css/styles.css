@@ -29,12 +29,31 @@ body.dark-mode .header-nav .links a:hover {
     color: #fefefe;
     transition: .1s ease-in-out;
 }
-body.dark-mode .opinion-cards div {
+body.dark-mode .movies-cards div {
     background-color: #222;
     color: white;
 }
-body.dark-mode .opinion-cards div img {
+body.dark-mode .movies-cards div img {
     outline: 1px solid white;
+}
+body.dark-mode .movies-page .pagination .button {
+    background-color: #222;
+    color: gray;
+}
+body.dark-mode .movies-page .pagination .button:hover {
+    color: white;
+}
+body.dark-mode .prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='gray'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+body.dark-mode .button:hover .prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+}
+body.dark-mode .next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='gray'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+body.dark-mode .button:hover .next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 /* ------ White Mode ------ */
 .header-nav {
@@ -83,7 +102,7 @@ body.dark-mode .opinion-cards div img {
     transition: .1s ease-in-out;
 }
 /* The switch - the box around the slider */
-.switch {
+.header-nav .navbar .switch {
     font-size: 17px;
     position: relative;
     display: inline-block;
@@ -92,13 +111,13 @@ body.dark-mode .opinion-cards div img {
     margin-left: 4rem;
 }
    /* Hide default HTML checkbox */
-.switch input {
+.header-nav .navbar .switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
    /* The slider */
-.slider {
+.header-nav .navbar .slider {
     position: absolute;
     cursor: pointer;
     width: 3.5rem;
@@ -112,7 +131,7 @@ body.dark-mode .opinion-cards div img {
     border-radius: 30px;
     outline: 2px solid gray;
 }
-.slider:before {
+.header-nav .navbar .slider:before {
     position: absolute;
     content: "";
     height: 1.1em;
@@ -124,46 +143,97 @@ body.dark-mode .opinion-cards div img {
     box-shadow: inset 8px -3px 2px 0px white;
     transition: .4s;
 }
-input:checked + .slider {
+.header-nav .navbar input:checked + .slider {
     background-color: rgb(166, 213, 255);
 }
-input:checked + .slider:before {
+.header-nav .navbar input:checked + .slider:before {
     transform: translateX(1.3em);
     background-color: #ffef00;
     box-shadow: none;
 }
-.opinion {
+.movies-page {
     margin-top: 5rem;
     text-align: center;
 }
-.opinion .header {
+.movies-page .header {
     font-size: 2.8rem;
 }
-.opinion-cards {
+.movies-cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr;
-    grid-column-gap: 2rem;
-    justify-items: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    width: 90%;
+    padding: 4rem 0;
+    margin: auto;
 }
-.opinion-cards div {
-    background-color: #FEFEFE;
-    max-width: 26rem;
+.movies-cards div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 290px;
     border-radius: 3%;
+    background-color: #FEFEFE;
     box-shadow: 10px 10px 20px #ababab29;
+    position: relative;
+    overflow: hidden;
 }
-.opinion-cards div img {
-    max-width: 30%;
-    border-radius: 50%;
-    margin: 3%;
+.movies-cards div img {
+    max-width: 90%;
+    border-radius: 3%;
+    margin-top: 5%;
+    margin-inline: auto;
 }
-.opinion-cards div h1 {
+.movies-cards div h1 {
     font-size: 1.5rem;
     font-weight: bolder;
-    margin: 0;
 }
-.opinion-cards div p {
+.movies-cards div p {
     font-size: 1rem;
     padding: .7rem;
     margin: 0;
+}
+.movies-page .pagination {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    padding: 5rem;
+}
+.pagination .button {
+    cursor: pointer;
+    display: flex;
+    padding: 20px;
+    background-color: #fefefe;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    box-shadow: 10px 10px 20px #ababab29;
+    width: 390px;
+}
+.pagination .button:hover {
+    background-color: rgba(0,0,0,.2);
+    transition: .1s ease-in-out;
+}
+.pagination .button-previous {
+    justify-content: flex-start;
+    text-align: left;
+    justify-self: end;
+}
+.prev-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill=''%3e%3cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3e%3c/svg%3e");
+    width: 2rem;
+    height: 2rem;
+    margin-right: 2rem;
+    background-size: 100% 100%;
+}
+.pagination .button-next {
+    justify-content: flex-end;
+    text-align: right;
+    justify-self: start;
+}
+.next-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill=''%3e%3cpath d='M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    width: 2rem;
+    height: 2rem;
+    margin-left: 2rem;
+    background-size: 100% 100%;
 }
