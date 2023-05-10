@@ -163,7 +163,7 @@ body.dark-mode .button:hover .next-icon {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 2rem;
-    width: 65%;
+    width: 55%;
     padding: 2.5rem 0;
     margin: auto;
 }
@@ -171,7 +171,7 @@ body.dark-mode .button:hover .next-icon {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 290px;
+    min-height: 313px;
     border-radius: 3%;
     background-color: #FEFEFE;
     box-shadow: 10px 10px 20px #ababab29;
